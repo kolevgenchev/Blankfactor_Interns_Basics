@@ -1,2 +1,2 @@
-# Blankfactor_Interns_Basics
- Repository forPosting  Basic Programing Excercises 
+# Practice
+ Java Tasks

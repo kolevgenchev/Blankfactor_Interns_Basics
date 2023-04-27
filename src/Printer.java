@@ -23,6 +23,21 @@ public class Printer {
                 tasks.addLast(taskPaper);
             }
         }
+
+        if (checkIfATaskMatchesAtLeastOnePaper(papers, tasks)) {
+            calculatePrinterTasks(papers, tasks);
+        }
         return tasks.size();
+    }
+
+    private boolean checkIfATaskMatchesAtLeastOnePaper(Stack<Integer> papers, Deque<Integer> tasks) {
+        for (int paper: papers) {
+            for (int taskPaper: tasks) {
+                if (paper == taskPaper) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

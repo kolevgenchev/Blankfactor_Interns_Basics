@@ -31,9 +31,11 @@ public class Printer {
     }
 
     private boolean checkIfATaskMatchesAtLeastOnePaper(Stack<Integer> papers, Deque<Integer> tasks) {
-        for (int paper: papers) {
+        if (papers.size() > 0) {
+            int paper = papers.pop();
             for (int taskPaper: tasks) {
                 if (paper == taskPaper) {
+                    papers.push(paper);
                     return true;
                 }
             }

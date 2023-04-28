@@ -20,9 +20,8 @@ namespace DataStructures
                 else
                 {
                     tasksToQueue.Enqueue(tasksToQueue.Dequeue());
+                    br++;
                 }
-
-                br++;
             }
 
             return tasksToQueue.Count;

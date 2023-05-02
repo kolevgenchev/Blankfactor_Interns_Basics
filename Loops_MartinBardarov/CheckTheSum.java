@@ -9,13 +9,13 @@ public class CheckTheSum {
 
         }
 
-        for (int i = 0; i < word2.length(); i++) {
-            sumWords = sumWords + (int) word2.charAt(i) - 97;
+        for (int j = 0; j < word2.length(); j++) {
+            sumWords = sumWords + (int) word2.charAt(j) - 97;
 
         }
 
-        for (int i = 0; i < target.length(); i++) {
-            sumTarget = sumTarget + (int) target.charAt(i) - 97;
+        for (int k = 0; k < target.length(); k++) {
+            sumTarget = sumTarget + (int) target.charAt(k) - 97;
 
         }
         if (sumTarget == sumWords) {

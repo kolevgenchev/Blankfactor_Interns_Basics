@@ -21,11 +21,9 @@ public class Task1 {
         tasks.add(1);
         tasks.add(0);
 
-      //  int firstTask = tasks.element();
         int count = 0;
 
-       // while(!(tasks.isEmpty()) && count <= paper.size() + 1) // || firstTask < tasks.size())
-        while(paper.size() > 0 || count >= paper.size())
+        while(paper.size() > 0 && count < paper.size())
         {
             if(paper.peek().equals(tasks.peek()))
             {
@@ -35,13 +33,11 @@ public class Task1 {
             } else
             {
                 tasks.add(tasks.remove());
-            }
                 count++;
-//            System.out.println(paper);
-//            System.out.println(tasks);
-//            System.out.println("---------");
+            }
+
         }
-        System.out.println(count);
+        System.out.println(tasks.size());
 
     }
 }

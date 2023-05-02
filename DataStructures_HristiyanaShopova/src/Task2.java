@@ -18,7 +18,7 @@ public class Task2 {
         }
         phoneBook.remove(3);
 
-        System.out.println("--------");
+        System.out.println("---------");
         for (int i = 0; i < phoneBook.size(); i++) {
             System.out.println(phoneBook.get(i));
         }

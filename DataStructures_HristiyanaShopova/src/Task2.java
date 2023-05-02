@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.LinkedList;
 
 public class Task2 {
@@ -19,8 +17,8 @@ public class Task2 {
             System.out.println(phoneBook.get(i));
         }
         phoneBook.remove(3);
- 
-        System.out.println("--------");
+
+        System.out.println("---------");
         for (int i = 0; i < phoneBook.size(); i++) {
             System.out.println(phoneBook.get(i));
         }

@@ -19,7 +19,7 @@ public class Task2 {
             System.out.println(phoneBook.get(i));
         }
         phoneBook.remove(3);
-
+ 
         System.out.println("--------");
         for (int i = 0; i < phoneBook.size(); i++) {
             System.out.println(phoneBook.get(i));

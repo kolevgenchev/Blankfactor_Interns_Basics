@@ -42,8 +42,8 @@
 
                     var printList = inputPrint switch
                     {
-                        "fragile" => carList.Where(x => x.BaseCargo.CargoType == CargoType.fragile && x.Tires.Any(r => r.Pressure < 1)),
-                        "flammable" => carList.Where(x => x.BaseCargo.CargoType == CargoType.flammable && x.BaseEngine.EnginePower > 250),
+                        "fragile" => carList.Where(x => x.Cargo.CargoType == CargoType.fragile && x.Tires.Any(r => r.Pressure < 1)),
+                        "flammable" => carList.Where(x => x.Cargo.CargoType == CargoType.flammable && x.Engine.EnginePower > 250),
                         _ => Enumerable.Empty<Car>()
                     };
 

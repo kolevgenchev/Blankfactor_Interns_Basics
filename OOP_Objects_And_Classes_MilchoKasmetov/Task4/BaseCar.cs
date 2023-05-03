@@ -8,11 +8,11 @@ namespace Task4
 {
     public abstract class BaseCar
     {
-        protected BaseCar(BaseModel baseModel, BaseEngine baseEngine, BaseCargo baseCargo)
+        protected BaseCar(BaseModel model, BaseEngine engine, BaseCargo cargo)
         {
-            this.Model = baseModel;
-            this.Engine = baseEngine;
-            this.Cargo = baseCargo;
+            this.Model = model;
+            this.Engine = engine;
+            this.Cargo = cargo;
             this.Tires = new List<BaseTire>();
         }
 

@@ -16,7 +16,7 @@
                         throw new NullReferenceException();
                     }
 
-                    Console.WriteLine("slap index one");
+                    Console.WriteLine("Swap index one");
                     var index1 = int.Parse(Console.ReadLine());
 
                     if (index1 < 0 || index1 >= list.Count)
@@ -24,7 +24,7 @@
                         throw new IndexOutOfRangeException();
                     }
 
-                    Console.WriteLine("slap index two");
+                    Console.WriteLine("Swap index two");
                     var index2 = int.Parse(Console.ReadLine());
 
                     if (index2 < 0 || index2 >= list.Count)

@@ -4,22 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// Press ⇧ twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
+        int num = Integer.parseInt(scanner.nextLine());
+        System.out.println(isPalindrome(num));
         // fizzBuzz();
-        //loops.mergeTwoStrings();
-        //isPalindrome();
-        //loops.checkTheSum();
+        //mergeTwoStrings();
+        //checkTheSum();
         return;
     }
 
-    public static void isPalindrome() {
-        Scanner scanner = new Scanner(System.in);
-        String number = scanner.nextLine();
+    public static boolean isPalindrome(int number) {
+        //Scanner scanner = new Scanner(System.in);
+        //String number = scanner.nextLine();
+        int oldNum = number;
 
+        int reversed = 0;
+        while (number > 0)
+        {
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number /= 10;
+
+        }
+        return oldNum == reversed;
+        /*
         int flag = 0;
         int i = 0;
         for (int j = number.length() - 1 ; j >= 0; j--) {
@@ -35,25 +45,11 @@ public class Main {
         } else {
             System.out.println("This number is NOT a palindrome.");
         }
+        */
     }
 
-    public static void mergeTwoStrings() {
-/*
-        Scanner scanner = new Scanner(System.in);
+    public static String mergeTwoStrings() {
 
-        String word1 = scanner.nextLine();
-        String word2 = scanner.nextLine();
-
-        String resultString = "";
-
-        int maxLength = Math.max(word1.length(), word2.length());
-
-        while (maxLength > 0) {
-            for (int i = 0; i < maxLength; i++) {
-                resultString += word1.charAt(i);
-                resultString += word2.charAt(i);
-            }
-        }*/
         Scanner scanner = new Scanner(System.in);
 
         String word1 = scanner.nextLine();
@@ -65,34 +61,11 @@ public class Main {
             result += word1.charAt(i);
             result += word2.charAt(i);
         }
-
-        /* second way to solving the problem
-        int i = 0;
-        while(Math.max(word1.length(), word2.length()) > 0)
-        {
-            result += word1.charAt(i);
-            result += word2.charAt(i);
-            i++;
-        }*/
-
-        System.out.println(result);
-        /*
-        StringBuilder resultString = new StringBuilder();
-        int minLength = Math.min(word1.length(), word2.length());
-
-            for (int j = 0; j < minLength; j++) {
-
-              resultString.append(word1.charAt(j));
-                resultString.append(word2.charAt(j));
-                //resultString += word1.charAt(j);
-                //resultString += word2.charAt(j);
-            }
-            resultString.append(word1.substring(minLength)).append(word2.substring(minLength));
-            */
+        return result;
 
     }
 
-    public static String fizzBuzz() {
+    public static List<String> fizzBuzz() {
         Scanner scanner = new Scanner(System.in);
         //  int n = scanner.nextInt();
         int n = Integer.parseInt(scanner.nextLine());
@@ -114,32 +87,10 @@ public class Main {
             }
         }
         System.out.println(arr);
-        return arr.toString();
+        return arr;
     }
 
-    public static void checkTheSum() {
-        /*
-        String firstWord = "abc";
-        String secondWord = "cba";
-        String targetWord = "cdb";
-
-        int sumA = 0;
-        int sumB = 0;
-        int sumC = 0;
-
-        for (int i = 0; i < firstWord.length(); i++) {
-            sumA += (int) firstWord.charAt(i) - 97;
-        }
-           for (int j = 0; j < secondWord.length(); j++) {
-                for (int k = 0; k < targetWord.length(); k++) {
-
-
-                    sumB += secondWord.charAt(i) - 97;
-                    sumC += targetWord.charAt(k) - 97;
-                }
-            }
-        }
-        System.out.println(sumA);*/
+    public static boolean checkTheSum() {
     Scanner scanner = new Scanner(System.in);
 
     String firstWord = "acb";
@@ -150,6 +101,7 @@ public class Main {
     int sum3 = 0;
 
     // checkTheSumNegativeResult();
+        boolean flag = false;
 
             for (int i = 0; i < firstWord.length(); i++) {
         sum1 += (int)firstWord.charAt(i) - 97;
@@ -163,11 +115,12 @@ public class Main {
 
             if (sum1 + sum2 == sum3)
     {
-        System.out.println("true");
+        flag = true;
     } else
     {
-        System.out.println("false");
+        flag = false;
     }
 
+            return flag;
     }
 }

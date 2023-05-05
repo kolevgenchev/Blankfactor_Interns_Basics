@@ -6,3 +6,92 @@ phoneNums.splice(2,1)
 console.log(phoneNums)
 }
 task2()
+
+
+//newSolution with linked list...
+
+class ListNode {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class PhoneBook {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
+
+  add(phoneNumber) {
+    let newNode = new ListNode(phoneNumber);
+    if (this.head === null) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next !== null) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+    this.size++;
+  }
+
+  insert(phoneNumber, index) {
+    if (index < 0 || index > this.size) {
+      throw new Error('Index out of range');
+    }
+
+    let newNode = new ListNode(phoneNumber);
+    if (index === 0) {
+      newNode.next = this.head;
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      let prev = null;
+      let i = 0;
+      while (i < index) {
+        prev = current;
+        current = current.next;
+        i++;
+      }
+      prev.next = newNode;
+      newNode.next = current;
+    }
+    this.size++;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.size) {
+      throw new Error('Index out of range');
+    }
+
+    if (index === 0) {
+      this.head = this.head.next;
+    } else {
+      let current = this.head;
+      let prev = null;
+      let i = 0;
+      while (i < index) {
+        prev = current;
+        current = current.next;
+        i++;
+      }
+      prev.next = current.next;
+    }
+    this.size--;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.size) {
+      throw new Error('Index out of range');
+    }
+
+    let current = this.head;
+    let i = 0;
+    while (i < index) {
+      current = current.next;
+      i++;
+    }
+    return current.data;
+  }

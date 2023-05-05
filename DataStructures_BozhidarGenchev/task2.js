@@ -95,3 +95,32 @@ class PhoneBook {
     }
     return current.data;
   }
+
+  print() {
+    let current = this.head;
+    while (current !== null) {
+      console.log(current.data);
+      current = current.next;
+    }
+  }
+}
+
+
+let phoneBook = new PhoneBook();
+
+
+phoneBook.add('+1 555-1234');
+phoneBook.add('+44 20 7123 4567');
+phoneBook.add('+81 3-1234-5678');
+phoneBook.insert('+359 83 74 84 84', 3); // insert at index 3
+phoneBook.add('+61 2 1234 5678');
+phoneBook.add('+55 21 1234-5678');
+
+
+phoneBook.print();
+
+
+phoneBook.remove(2);
+
+
+phoneBook.print();

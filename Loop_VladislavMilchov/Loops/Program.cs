@@ -1,23 +1,37 @@
-﻿using System;
+using System;
 
-namespace BlankfactorLoops
+namespace FixMergeString
 {
     class Program
     {
         static void Main(string[] args)
         {
             string word1 = "abc";
-            string word2 = "pqr";
+            string word2 = "pqrv";
 
-            for (int i = 0; i < word1.Length; i++)
+            if (word1.Length > word2.Length)
             {
-                Console.Write(string.Concat(word1[i]));
+                Concat(word2, word1);
+            }
+            else 
+            {
+                Concat(word1, word2);   
+            }
+        }
 
-                Console.Write(string.Concat(word2[i]));
+        static void Concat(string shorter, string longer)
+        {
+            int i;
+            for (i = 0; i < shorter.Length; i++)
+            {
+                Console.Write(shorter[i]);
+
+                Console.Write(longer[i]);
             }
 
-
-            //was fixed for diff lenght on words but lost it because of trying to fix DS_Store and deleting the branch
+            for (int j = i; j < longer.Length; j++)
+            {
+                Console.Write(longer[i]);                
+            }
         }
     }
-}
